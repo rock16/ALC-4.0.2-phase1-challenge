@@ -138,7 +138,7 @@ public class DealActivity extends AppCompatActivity {
                             deal.setImageUrl(downloadUrl);
                             deal.setImageName(pictureName);
                             showImage(downloadUrl);
-                            Toast.makeText(DealActivity.this, "Upload done for ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(DealActivity.this, "Upload Completed", Toast.LENGTH_LONG).show();
                         }
                     });
 
@@ -210,7 +210,7 @@ public class DealActivity extends AppCompatActivity {
             int width = Resources.getSystem().getDisplayMetrics().widthPixels;
             Picasso.get()
                     .load(url)
-                    .resize(width, width*2/3)
+                    .resize(width*4/5, width*2/3)
                     .centerCrop()
                     .into(mImageView);;
         }
