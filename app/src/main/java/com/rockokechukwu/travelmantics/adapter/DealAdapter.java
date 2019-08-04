@@ -38,9 +38,8 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
     private ImageView imageDeal;
 
 
-    public DealAdapter(ListActivity listActivity) {
-        //mListActivity = listActivity;
-        FirebaseUtil.openFbReference("traveldeals", listActivity);
+    public DealAdapter() {
+        //FirebaseUtil.openFbReference("traveldeals", listActivity);
         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
         mDatabaseRef = FirebaseUtil.mDatabaseRef;
         deals = FirebaseUtil.mDeals;

@@ -45,9 +45,10 @@ public class ListActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.list_activity_menu, menu);
         MenuItem insertMenu = menu.findItem(R.id.insert_menu);
-        insertMenu.setVisible(false);
-        if (FirebaseUtil.isAdmin == true){
-            insertMenu.setVisible(true);
+        if (FirebaseUtil.isAdmin == false){
+            insertMenu.setVisible(false);
+        }else {
+            menu.findItem(R.id.insert_menu).setVisible(true);
         }
         return true;
     }
@@ -84,8 +85,9 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        FirebaseUtil.openFbReference("traveldeals", this);
         RecyclerView rvDeals = (RecyclerView) findViewById(R.id.rvDeals);
-        final DealAdapter adapter = new DealAdapter(this);
+        final DealAdapter adapter = new DealAdapter();
         rvDeals.setAdapter(adapter);
         LinearLayoutManager dealsLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rvDeals.setLayoutManager(dealsLayoutManager);
