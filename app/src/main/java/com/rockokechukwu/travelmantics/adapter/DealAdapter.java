@@ -19,7 +19,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rockokechukwu.travelmantics.DealActivity;
-import com.rockokechukwu.travelmantics.ListActivity;
 import com.rockokechukwu.travelmantics.R;
 import com.rockokechukwu.travelmantics.model.TravelDeal;
 import com.rockokechukwu.travelmantics.util.FirebaseUtil;

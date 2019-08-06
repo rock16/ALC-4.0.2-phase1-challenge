@@ -13,7 +13,9 @@
         android:layout_marginStart="@dimen/text_margin_standard"
         android:layout_marginLeft="@dimen/text_margin_standard"
         android:layout_marginTop="@dimen/text_margin_standard"
+        android:layout_marginBottom="@dimen/text_margin_standard"
         android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/text_margin_standard"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="@dimen/text_margin_standard"
         android:layout_marginRight="@dimen/text_margin_standard"
         android:text="TextView"
         android:textColor="@color/colorAccent"

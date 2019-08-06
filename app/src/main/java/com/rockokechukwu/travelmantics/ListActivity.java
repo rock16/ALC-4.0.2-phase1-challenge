@@ -2,10 +2,15 @@ package com.rockokechukwu.travelmantics;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +36,7 @@ public class ListActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseRef;
     private ChildEventListener mChildListener;
+    private DividerItemDecoration mDividerItemDecoration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +95,10 @@ public class ListActivity extends AppCompatActivity {
         rvDeals.setAdapter(adapter);
         LinearLayoutManager dealsLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rvDeals.setLayoutManager(dealsLayoutManager);
+
+        mDividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        rvDeals.addItemDecoration(mDividerItemDecoration);
+        rvDeals.setHasFixedSize(true);
         FirebaseUtil.attachlistener();
     }
 
