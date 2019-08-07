@@ -93,8 +93,6 @@ public class FirebaseUtil {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                FirebaseUtil.isAdmin = true;
-                caller.showMenu();
             }
 
             @Override

@@ -50,11 +50,17 @@ public class ListActivity extends AppCompatActivity {
         Log.d("is Admin: ", ""+FirebaseUtil.isAdmin);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.list_activity_menu, menu);
-        MenuItem insertMenu = menu.findItem(R.id.insert_menu);
-        if (FirebaseUtil.isAdmin == true){
-            insertMenu.setVisible(true);
-        }
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        if (FirebaseUtil.isAdmin == true){
+            menu.findItem(R.id.insert_menu).setVisible(true);
+        } else {
+            menu.findItem(R.id.insert_menu).setVisible(false);
+        }
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
